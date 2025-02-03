@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useEffect, useContext, useState } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import CheckoutButton from "../../components/CheckoutButton/CheckoutButton.jsx";
+import TrashIcon from '../../public/trash1.svg'
 
 const CartPage = () => {
   const { cart, products, prices } = useContext(ShopContext);
@@ -70,10 +71,10 @@ const CartPage = () => {
                 <div className="quantity-selector-wrapper">
                   <input
                     defaultValue={cart[item]}
-                    type="text"
+                    type="number"
                     className="quantity-selector"
-                    readonly
                   />
+                  <img src={TrashIcon} id='trash-icon'></img>
                 </div>
               </div>
             );

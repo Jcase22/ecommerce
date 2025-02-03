@@ -3,10 +3,11 @@ import { Link } from "react-router-dom";
 import { useEffect, useContext, useState } from "react";
 import { ShopContext } from "../../context/ShopContext";
 import CheckoutButton from "../../components/CheckoutButton/CheckoutButton.jsx";
-import TrashIcon from '../../public/trash1.svg'
+import { keyBy } from "../../utils/utils.js";
+import TrashIcon from "../../public/trash1.svg";
 
 const CartPage = () => {
-  const { cart, products, prices } = useContext(ShopContext);
+  const { cart, setCart, products, prices } = useContext(ShopContext);
   const [cartTotal, setCartTotal] = useState(0);
 
   const fetchProductInfo = (item) => {
@@ -25,18 +26,23 @@ const CartPage = () => {
     }
   };
 
+  const removeFromCart = (productId) => {
+    const cartCopy = { ...cart };
+    delete cartCopy[productId];
+    setCart(cartCopy);
+  };
+
   const calcCartTotal = () => {
     let cartTotal = 0;
 
     const cartObjKeys = Object.keys(cart);
 
-    for (let i = 0; i < cartObjKeys.length; i++) {
-      for (let x = 0; x < prices.length; x++) {
-        if (prices[x].product === cartObjKeys[i]) {
-          cartTotal += prices[x].unit_amount * cart[cartObjKeys[i]];
-        }
-      }
-    }
+    const pricesKeyedByProductId = keyBy(prices, "product");
+
+    cartObjKeys.forEach((productId) => {
+      cartTotal +=
+        pricesKeyedByProductId[productId].unit_amount * cart[productId];
+    });
 
     return cartTotal / 100;
   };
@@ -74,7 +80,14 @@ const CartPage = () => {
                     type="number"
                     className="quantity-selector"
                   />
-                  <img src={TrashIcon} id='trash-icon'></img>
+                  <img
+                    src={TrashIcon}
+                    id="trash-icon"
+                    onClick={() => {
+                      console.log('hello!')
+                      removeFromCart(item);
+                    }}
+                  />
                 </div>
               </div>
             );

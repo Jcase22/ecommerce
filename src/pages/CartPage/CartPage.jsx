@@ -70,8 +70,9 @@ const CartPage = () => {
                 <div className="quantity-selector-wrapper">
                   <input
                     defaultValue={cart[item]}
-                    type="number"
+                    type="text"
                     className="quantity-selector"
+                    readonly
                   />
                 </div>
               </div>

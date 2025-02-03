@@ -1,0 +1,48 @@
+.btn-75,
+.btn-75 *,
+.btn-75 :after,
+.btn-75 :before,
+.btn-75:after,
+.btn-75:before {
+  border: 0 solid;
+  box-sizing: border-box;
+}
+.btn-75 {
+  -webkit-tap-highlight-color: transparent;
+  background-color: #000;
+  background-image: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 100%;
+  line-height: 1.5;
+  margin-right: 5px;
+  padding: 0;
+
+}
+.btn-75:disabled {
+  cursor: default;
+}
+.btn-75:-moz-focusring {
+  outline: auto;
+}
+.btn-75 svg {
+  display: block;
+}
+.btn-75 [hidden] {
+  display: none;
+}
+.btn-75 {
+  background: var(--primary-dark);
+  box-sizing: border-box;
+  color: #fff;
+  display: block;
+  font-weight: 500;
+  overflow: hidden;
+  width: 100%;
+  padding: 1.125rem 0;
+  position: relative;
+  text-transform: uppercase;
+}
+.btn-75:active {
+  transform: translateY(3px);
+}

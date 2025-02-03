@@ -1,0 +1,39 @@
+
+.product-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: 5vh 5vw;
+}
+
+.headline-image {
+  height: 70vh;
+}
+
+.product-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  width: 35vw;
+}
+
+.spacing {
+  height: 8vh;
+}
+
+.product-title {
+  margin-bottom: 1vh;
+  font-weight: 300;
+  font-size: 4vh;
+}
+
+.product-price {
+  font-weight: 300;
+  font-size: 4vh;
+}
+
+.loader {
+  opacity: 0;
+}

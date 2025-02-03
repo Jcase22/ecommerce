@@ -1,0 +1,44 @@
+:root {
+  --primary-dark: #323031;
+  --secondary-dark: #000000;
+  --primary-accent: #c6d4ff;
+  --secondary-accent: #5f5b6b;
+  --primary-light: #f0f0c9;
+  --secondary-light: #ffffff;
+
+  --spacing1: 0.125rem;
+  --spacing2: 0.25rem;
+  --spacing3: 0.5rem;
+  --spacing4: 0.75rem;
+  --spacing5: 1rem;
+  --spacing6: 1.5rem;
+  --spacing7: 2rem;
+  --spacing8: 2.5rem;
+  --spacing9: 3rem;
+  --spacing10: 4rem;
+  --spacing11: 5rem;
+  --spacing12: 6rem;
+  --spacing13: 10rem;
+
+  font-family: Helvetica, sans-serif;
+  font-weight: 500;
+
+  color: var(--primary-dark);
+  background-color: var(--secondary-light);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin: 0;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+

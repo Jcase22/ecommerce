@@ -2,34 +2,29 @@ import "./HomePage.css";
 import { useEffect, useState, useContext } from "react";
 import ProductCard from "../../components/ProductCard/ProductCard.jsx";
 import { ShopContext } from "../../context/ShopContext.jsx";
+import { keyBy } from "../../utils/utils.js";
 
 const HomePage = () => {
+  const { prices, products } = useContext(ShopContext);
 
-  const {prices, products} = useContext(ShopContext);
-
+  const pricesKeyedByProduct = keyBy(prices, "product");
 
   return prices ? (
     <div className="product-card-board">
       {products.map((product) => {
-        let currentPriceObj = {};
-
-        for (let i = 0; i < prices.length; i++) {
-          if (product.id === prices[i].product) {
-            currentPriceObj = prices[i];
-            break;
-          }
-        }
 
         return (
           <ProductCard
             key={product.id}
             productInfo={product}
-            priceInfo={currentPriceObj}
+            priceInfo={pricesKeyedByProduct[product.id]}
           />
         );
       })}
     </div>
-  ) : <div className='loader'/>
+  ) : (
+    <div className="loader" />
+  );
 };
 
 export default HomePage;

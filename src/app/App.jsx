@@ -14,6 +14,9 @@ import { Elements } from "@stripe/react-stripe-js";
 const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_KEY);
 
 const App = () => {
+  const { cart, prices, products, setPrices, setProducts } =
+    useContext(ShopContext);
+
   const loader = "auto";
   const appearance = {
     theme: "stripe",
@@ -21,8 +24,7 @@ const App = () => {
   const mode = "payment";
   const currency = "usd";
   const amount = 1099;
-
-  const { prices, products, setPrices, setProducts } = useContext(ShopContext);
+  const isCartEmpty = Object.keys(cart).length === 0;
 
   const listProducts = async () => {
     let config = {
@@ -72,8 +74,14 @@ const App = () => {
           <Route path={"/"} element={<HomePage />} />
           <Route path={"/cart"} element={<CartPage />} />
           <Route path={"/product/:productId"} element={<ProductPage />} />
-          <Route path={"/checkout"} element={<CheckoutPage />} />
-          <Route path={"/payment-complete"} element={<PaymentCompletePage />} />
+          <Route
+            path={"/checkout"}
+            element={isCartEmpty ? <HomePage /> : <CheckoutPage />}
+          />
+          <Route
+            path={"/payment-complete"}
+            element={isCartEmpty ? <HomePage /> : <PaymentCompletePage />}
+          />
         </Routes>
       </Elements>
     </>

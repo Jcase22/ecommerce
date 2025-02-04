@@ -3,7 +3,7 @@ import { useContext } from "react";
 import { ShopContext } from "../../context/ShopContext.jsx";
 
 const AddToCartButton = ({ productId }) => {
-  let { cartAmount, setCartAmount, cart, setCart } = useContext(ShopContext);
+  let { cart, setCart } = useContext(ShopContext);
 
   const handleClick = () => {
     const cartCopy = { ...cart };
@@ -14,7 +14,6 @@ const AddToCartButton = ({ productId }) => {
       cartCopy[productId] += 1;
     }
 
-    setCartAmount((cartAmount += 1));
     setCart(cartCopy);
   };
 

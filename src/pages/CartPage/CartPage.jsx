@@ -77,7 +77,8 @@ const CartPage = () => {
                 <div className="quantity-selector-wrapper">
                   <input
                     defaultValue={cart[item]}
-                    type="number"
+                    type="text"
+                    disabled
                     className="quantity-selector"
                   />
                   <img

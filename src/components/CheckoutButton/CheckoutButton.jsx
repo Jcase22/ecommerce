@@ -12,7 +12,7 @@ const CheckoutButton = () => {
       {!isEmpty ? (
         <button className="checkout-btn">Proceed To Checkout</button>
       ) : (
-        <button className="disabled-checkout-btn">Proceed To Checkout</button>
+        <button disabled className="disabled-checkout-btn">Proceed To Checkout</button>
       )}
     </>
   );

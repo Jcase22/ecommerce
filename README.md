@@ -17,7 +17,7 @@
 
 **npm run devServer**
   -run this in a seperate terminal
-  -this start the server
+  -this starts the server
 
 
 

@@ -7,7 +7,7 @@ import { keyBy } from "../../utils/utils.js";
 import TrashIcon from "../../public/trash1.svg";
 
 const CartPage = () => {
-  const { cart, setCart, products, prices, cartAmount, setCartAmount } = useContext(ShopContext);
+  const { cart, setCart, products, prices } = useContext(ShopContext);
   const [cartTotal, setCartTotal] = useState(0);
 
   const fetchProductInfo = (item) => {

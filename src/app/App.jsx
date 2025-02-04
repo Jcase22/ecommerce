@@ -80,7 +80,7 @@ const App = () => {
           />
           <Route
             path={"/payment-complete"}
-            element={isCartEmpty ? <HomePage /> : <PaymentCompletePage />}
+            element={<PaymentCompletePage />}
           />
         </Routes>
       </Elements>

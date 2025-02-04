@@ -7,8 +7,6 @@ const CheckoutButton = () => {
 
   const isEmpty = Object.keys(cart).length === 0;
 
-  console.log("is empty?", isEmpty)
-
   return (
     <>
       {!isEmpty ? (

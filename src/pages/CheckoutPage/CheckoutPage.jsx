@@ -13,10 +13,6 @@ import {
 import PaymentCompletePage from "../../pages/PaymentCompletePage/PaymentCompletePage.jsx";
 import CheckoutForm from "../../components/CheckoutForm/CheckoutForm.jsx";
 
-const stripePromise = loadStripe(
-  "pk_test_51Qn2QL07YZ22xJoRveVHkfKtLxF2qcGyIPgUbtC0nxVGCLJ2VV70QGtPLmLF3JLhJD62h4HnuyXMW0l4Rova8Ch1008NK431yJ"
-);
-
 const CheckoutPage = () => {
 
 

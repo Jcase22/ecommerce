@@ -6,16 +6,13 @@ const ShopContextProvider = (props) => {
   const [products, setProducts] = useState([]);
   const [prices, setPrices] = useState([]);
   const [cart, setCart] = useState({});
-  const [cartAmount, setCartAmount] = useState(0);
 
   return (
     <ShopContext.Provider
       value={{
-        cartAmount,
         products,
         prices,
         cart,
-        setCartAmount,
         setProducts,
         setPrices,
         setCart,

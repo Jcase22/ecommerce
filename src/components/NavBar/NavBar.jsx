@@ -5,9 +5,21 @@ import cartIcon from "../../public/cart1.svg";
 import { ShopContext } from "../../context/ShopContext.jsx";
 
 const NavBar = () => {
-  let { cartAmount } = useContext(ShopContext);
+  const { cart } = useContext(ShopContext);
 
-  return cartAmount !== undefined ? (
+  const calcItemAmount = () => {
+    let amount = 0;
+
+    const cartItems = Object.values(cart);
+
+    cartItems.forEach((item) => {
+      amount += item
+    })
+
+    return amount
+  }
+
+  return cart !== undefined ? (
     <nav className="navbar">
       <div className="nav-logo">
         <p>COZY THREADS</p>
@@ -23,8 +35,8 @@ const NavBar = () => {
       <div className="nav-cart-container">
         <Link to="/cart" className="link">
           <img className="cart-icon" src={cartIcon} alt="" />
-          {cartAmount !== 0 ? (
-            <span className="cart-item-count">{cartAmount}</span>
+          {calcItemAmount() !== 0 ? (
+            <span className="cart-item-count">{calcItemAmount()}</span>
           ) : null}
         </Link>
       </div>
